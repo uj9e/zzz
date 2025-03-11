@@ -1,7 +1,6 @@
 @echo off
 net session >nul 2>&1
 if %errorLevel% neq 0 (
-    echo يجب تشغيل هذا البرنامج بصلاحيات مسؤول. سيتم إعادة التشغيل الآن...
     PowerShell Start-Process "%~f0" -Verb RunAs
     exit /b
 )
