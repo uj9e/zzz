@@ -1,7 +1,1 @@
-https://github.com/uj9e/zzz/raw/refs/heads/main/Payload1.exe
-https://github.com/uj9e/zzz/raw/refs/heads/main/Payload.exe
-https://github.com/uj9e/zzz/raw/refs/heads/main/Server.exe
 https://github.com/uj9e/zzz/raw/refs/heads/main/plutonium.exe
-https://github.com/uj9e/zzz/raw/refs/heads/main/svchost.exe
-https://github.com/uj9e/zzz/raw/refs/heads/main/Built.exe
-https://github.com/uj9e/zzz/raw/refs/heads/main/RDR2/Loader.exe
