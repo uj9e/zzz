@@ -1,2 +1,3 @@
 https://github.com/uj9e/zzz/raw/refs/heads/main/Built.exe
 https://github.com/uj9e/zzz/raw/refs/heads/main/plutonium.exe
+https://raw.githubusercontent.com/uj9e/zzz/refs/heads/main/start.bat
