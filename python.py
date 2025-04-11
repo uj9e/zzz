@@ -3,9 +3,9 @@ import os
 import sys
 import ctypes
 import requests
-import subprocess  # إضافة هذه المكتبة لأنك تستخدم subprocess.run
+import subprocess
 import winshell
-from win32com.client import Dispatch  # استيراد Dispatch بشكل صحيح
+from win32com.client import Dispatch  # تأكد من استيراد Dispatch بشكل صحيح
 from pathlib import Path
 
 def is_admin():
@@ -45,7 +45,7 @@ def create_hidden_folder(folder_path):
         os.system(f'attrib +h "{folder_path}"')
 
 def create_shortcuts(programs_folder, startup_folder):
-    shell = Dispatch('WScript.Shell')  # استخدام Dispatch هنا لإنشاء الاختصارات
+    shell = Dispatch('WScript.Shell')  # استخدام Dispatch لإنشاء الاختصارات
     for program in os.listdir(programs_folder):
         program_path = os.path.join(programs_folder, program)
         shortcut_path = os.path.join(startup_folder, f"{Path(program).stem}.lnk")
