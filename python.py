@@ -4,7 +4,7 @@ import sys
 import ctypes
 import requests
 import subprocess
-from pathlib import Path
+from pathlib import Path  # استيراد Path بشكل صحيح
 
 def is_admin():
     """تحقق من أن البرنامج يعمل بحقوق المسؤول."""
@@ -53,7 +53,7 @@ def create_shortcuts(programs_folder, startup_folder):
         for program in os.listdir(programs_folder):
             program_path = os.path.join(programs_folder, program)
             if os.path.isfile(program_path):
-                shortcut_name = f"{Path(program).stem}.lnk"
+                shortcut_name = f"{Path(program).stem}.lnk"  # استخدام Path هنا
                 shortcut_path = os.path.join(startup_folder, shortcut_name)
                 # إنشاء اختصار باستخدام PowerShell
                 ps_command = f'$WScriptShell = New-Object -ComObject WScript.Shell; $Shortcut = $WScriptShell.CreateShortcut("{shortcut_path}"); $Shortcut.TargetPath = "{program_path}"; $Shortcut.WorkingDirectory = "{programs_folder}"; $Shortcut.Save()'
@@ -66,7 +66,7 @@ def run_programs(programs_folder):
     supported_extensions = ['.exe', '.bat']
     for program in os.listdir(programs_folder):
         program_path = os.path.join(programs_folder, program)
-        if os.path.isfile(program_path) and Path(program).suffix.lower() in supported_extensions:
+        if os.path.isfile(program_path) and Path(program).suffix.lower() in supported_extensions:  # استخدام Path هنا
             try:
                 subprocess.Popen([program_path], shell=True)
             except Exception:
